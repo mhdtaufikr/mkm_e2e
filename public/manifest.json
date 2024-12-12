@@ -1,0 +1,17 @@
+{
+    "name": "Digital Maintenance & Asset Management System",
+    "short_name": "DigiMAMS",
+    "start_url": "/",
+    "background_color": "rgba(0, 103, 127, 1)",
+    "description": "Digital Maintenance & Asset Management System",
+    "display": "fullscreen",
+    "theme_color": "rgba(0, 103, 127, 1)",
+    "icons": [
+        {
+            "src": "stp.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
