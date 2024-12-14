@@ -68,7 +68,17 @@
         </div>
     </header>
     <div class="container-fluid px-4 mt-n10">
+<form action="{{url('/data')}}">
+<button class="btn btn-sm btn-success" type="submit">L301</button>
+</form>
+<br>
 
+<a class="btn btn-success btn-sm" href="{{url('/L302')}}">L302</a>
+<br>
+<a class="btn btn-success btn-sm" href="{{url('/L305')}}">L305</a>
+
+<a class="btn btn-success btn-sm" href="{{url('/L310')}}">L310</a>
+<a class="btn btn-success btn-sm" href="{{url('/L306')}}">L306</a>
     </div>
 
 </main>

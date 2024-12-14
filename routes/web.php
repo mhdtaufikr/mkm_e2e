@@ -61,5 +61,9 @@ Route::post('/change-password', [AuthController::class, 'changePassword'])->name
     Route::post('/bom/store', [BomController::class, 'store'])->name('bom.store');
 
     Route::get('/api', [BomController::class, 'saveApiData']);
+    Route::get('/data', [BomController::class, 'data']);
+    Route::get('/L302', [BomController::class, 'L302']);
+    Route::get('/L310', [BomController::class, 'L310']);
+    Route::get('/L306', [BomController::class, 'L306']);
 
     });
