@@ -13,11 +13,46 @@
                         </h1>
                         <div class="page-header-subtitle">Manage Bill of Material</div>
                     </div>
-
+                    <div class="col-12 col-xl-auto mt-4">
+                        <button class="btn btn-success btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#dailyReport">
+                            <i class="fas fa-file-excel"></i> Upload Daily Report
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Modal for Upload -->
+<div class="modal fade" id="dailyReport" tabindex="-1" aria-labelledby="modal-add-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-add-label">Upload Daily Report</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ url('/bom/upload') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="file" class="form-control" id="csvFile" name="excel-file" accept=".csv, .xlsx">
+                        <p class="text-danger">*file must be .xlsx or .csv</p>
+                    </div>
+                    @error('excel-file')
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ url('/bom/template') }}" class="btn btn-link">Download Excel Format</a>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
     <div class="container-fluid px-4 mt-n10">
         <div class="content-wrapper">

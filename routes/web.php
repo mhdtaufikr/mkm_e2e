@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function () {
 Route::post('/change-password', [AuthController::class, 'changePassword'])->name('changePassword');
     //Home Controller
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home/data', [HomeController::class, 'getData'])->name('home.data');
+
 
     //Dropdown Controller
      Route::get('/dropdown', [DropdownController::class, 'index']);
@@ -63,7 +65,11 @@ Route::post('/change-password', [AuthController::class, 'changePassword'])->name
     Route::get('/api', [BomController::class, 'saveApiData']);
     Route::get('/data', [BomController::class, 'data']);
     Route::get('/L302', [BomController::class, 'L302']);
+    Route::get('/L305', [BomController::class, 'L305']);
     Route::get('/L310', [BomController::class, 'L310']);
     Route::get('/L306', [BomController::class, 'L306']);
+
+    Route::get('/bom/template', [BomController::class, 'template']);
+    Route::get('/bom/upload', [BomController::class, 'upload']);
 
     });

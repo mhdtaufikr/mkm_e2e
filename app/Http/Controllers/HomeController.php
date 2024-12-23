@@ -9,11 +9,20 @@ use Yajra\DataTables\DataTables;
 class HomeController extends Controller
 {
     public function index()
-    {
+{
+    // Return the main view for the table
+    return view('home.index');
+}
 
-        // Pass the grouped data to the view
-        return view('home.index');
-    }
+public function getData()
+{
+    // Query the data for the table
+    $data = DB::table('flow_process_view')->get(); // Replace with your table or query
+
+    // Return data formatted for DataTables
+    return datatables()->of($data)->make(true);
+}
+
 
     public function getMonthlySubmittedParts(Request $request)
     {
